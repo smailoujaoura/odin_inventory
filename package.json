@@ -1,0 +1,26 @@
+{
+  "name": "odin_inventory",
+  "version": "1.0.0",
+  "description": "1) \t1 hours  \t- plan for finishing the project \t- what type of data it will have; what niche etc. \t- plan what tables and the relatiosn between them \t- plan for the routes of the project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smailoujaoura/odin_inventory.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/smailoujaoura/odin_inventory/issues"
+  },
+  "homepage": "https://github.com/smailoujaoura/odin_inventory#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.2.1",
+    "zod": "^4.1.13"
+  }
+}
