@@ -1,8 +1,8 @@
 const db = require('../db/queries');
 
 async function showAllMovies(req, res) {
-	const movies = await 
-	res.render('movies', {});
+	const movies = await db.getAllMovies();
+	res.render('movies', {movies});
 }
 
 function showMovie(req, res) {
@@ -27,4 +27,4 @@ module.exports = {
 	addMovie,
 	updateMovie,
 	deleteMovie
-}
+};

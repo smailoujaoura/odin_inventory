@@ -9,8 +9,8 @@ CREATE TABLE IF NOT EXISTS movies (
     id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     name VARCHAR(255) NOT NULL,
     year INTEGER NOT NULL,
-    image TEXT,
-    binary_image BYTEA
+    image TEXT
+    -- binary_image BYTEA
 );
 
 CREATE TABLE IF NOT EXISTS actors (
@@ -29,11 +29,14 @@ CREATE TABLE IF NOT EXISTS movies_actors (
     PRIMARY KEY (movie_id, actor_id)
 );
 
-CREATE TABLE IF NOT EXITS movies_genres (
-	movie_id INTEGER REFERENCES movies(id) ON DELETE CASCADE,
-	actor_id INTEGER REFERENCES genres(id) ON DELETE CASCADE,
+CREATE TABLE IF NOT EXISTS movies_genres ( -- Fixed EXITS to EXISTS
+    movie_id INTEGER REFERENCES movies(id) ON DELETE CASCADE,
+    genre_id INTEGER REFERENCES genres(id) ON DELETE CASCADE,
     PRIMARY KEY (movie_id, genre_id)
 );
+
+ALTER TABLE actors ADD CONSTRAINT unique_actor_name UNIQUE (name);
+ALTER TABLE genres ADD CONSTRAINT unique_genre_name UNIQUE (name);
 
 -- Insert Movies
 INSERT INTO movies (name, year, image) VALUES 
@@ -76,8 +79,12 @@ INSERT INTO movies_genres (movie_id, genre_id) VALUES
 
 async function main() {
 	console.log("seeding...");
+    console.log(process.env.DB_URL);
 	const client = new Client({
-		connectionString: process.env.DB_URL
+		connectionString: process.env.DB_URL,
+        ssl: {
+            rejectUnauthorized: false
+        }
 	});
 
 	await client.connect();

@@ -1,0 +1,23 @@
+<%- include('partials/header', {title: 'All Movies'}) %>
+
+<h2>All Movies</h2>
+
+<div class="movie-list">
+    <% if (movies.length > 0) { %>
+        <% movies.forEach(movie => { %>
+            <div class="movie-card">
+                <h3><%= movie.name %> (<%= movie.year %>)</h3>
+                <% if (movie.image) { %>
+                    <img src="<%= movie.image %>" alt="<%= movie.name %>" width="150">
+                <% } %>
+                <br>
+                <a href="/movies/<%= movie.id %>">View Details</a>
+            </div>
+            <hr>
+        <% }) %>
+    <% } else { %>
+        <p>No movies found.</p>
+    <% } %>
+</div>
+
+<%- include('partials/footer') %>
