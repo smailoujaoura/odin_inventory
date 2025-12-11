@@ -95,3 +95,329 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+
+
+/* MOVIES VIEW STYLE */
+/* The Grid Container */
+.movie-list {
+    display: flex;
+    flex-wrap: wrap;       /* Allows items to wrap to next line */
+    gap: 20px;            /* Space between cards */
+    justify-content: center; /* Centers the grid on page */
+    padding: 20px;
+}
+
+/* The Card Look */
+.movie-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;   /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle shadow */
+    width: 220px;         /* Fixed width for uniformity */
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s; /* Smooth hover animation */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes button to bottom */
+}
+
+/* Hover Effect */
+.movie-card:hover {
+    transform: translateY(-5px); /* Lift up slightly */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+/* Image Styling */
+.movie-card img {
+    width: 100%;
+    height: 300px;        /* Force consistent height */
+    object-fit: cover;    /* Crops image to fit without stretching */
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+/* Button Styling */
+.movie-card a {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: auto; /* Ensures button is always at bottom */
+}
+
+.movie-card a:hover {
+    background-color: #0056b3;
+}
+/* MOVIES VIEW STYLE */
+
+
+
+/* --- Single Movie Details Layout --- */
+
+.movie-detail-container {
+    display: flex;
+    gap: 40px;
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto; /* Centers the container */
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* Responsive: Stack columns on mobile */
+@media (max-width: 700px) {
+    .movie-detail-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+/* Left Column: The Poster */
+.movie-poster {
+    flex-shrink: 0; /* Prevents image from shrinking */
+}
+
+.movie-poster img {
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.placeholder-img {
+    width: 300px;
+    height: 450px;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    color: #888;
+}
+
+/* Right Column: The Info */
+.movie-info {
+    flex-grow: 1;
+}
+
+.movie-info h1 {
+    margin-top: 0;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.meta {
+    color: #666;
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+/* --- Taxonomy (Genres & Actors) --- */
+.taxonomy {
+    margin-bottom: 20px;
+}
+
+.taxonomy h3 {
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+/* Style Lists as "Tags" (Pills) */
+.tag-list, .actor-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Genre Pills */
+.tag-list li {
+    background-color: #eef2f5;
+    color: #333;
+    padding: 5px 15px;
+    border-radius: 20px; /* Pill shape */
+    font-size: 0.9rem;
+    border: 1px solid #ddd;
+}
+
+/* Actor Pills (slightly different style) */
+.actor-list li {
+    background-color: #fff;
+    border: 1px solid #007bff;
+    color: #007bff;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+/* --- Action Buttons --- */
+.actions {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.actions button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.actions button:first-child {
+    background-color: #007bff; /* Blue Edit Button */
+    color: white;
+}
+
+.actions button:first-child:hover {
+    background-color: #0056b3;
+}
+
+.delete-btn {
+    background-color: #dc3545; /* Red Delete Button */
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+
+ /* 404 PAGE CSS*/ 
+.error-container {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.error-container h1 {
+    font-size: 6rem;
+    margin: 0;
+    color: #ddd; /* Light gray for the big number */
+    line-height: 1;
+}
+
+.error-container h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-top: 10px;
+}
+
+.home-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.home-btn:hover {
+    background-color: #555;
+}
+ /* 404 PAGE CSS*/ 
+
+
+/* add new movie styles */
+/* --- Form Styling --- */
+.form-container {
+    max-width: 500px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-group small {
+    display: block;
+    color: #666;
+    margin-top: 5px;
+    font-size: 0.85rem;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745; /* Green for "Add" */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.submit-btn:hover {
+    background-color: #218838;
+}
+/* add new movie styles */
+
+
+/* HOME Page more styles */
+/* --- Home Page Styling --- */
+.home-container {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.action-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+}
+
+/* Generic Button Styles */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    transition: transform 0.2s;
+}
+
+.btn:hover {
+    transform: scale(1.05); /* Slight grow effect */
+}
+
+/* Specific Colors */
+.btn-primary {
+    background-color: #007bff; /* Blue */
+}
+
+.btn-success {
+    background-color: #28a745; /* Green */
+}

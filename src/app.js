@@ -21,6 +21,14 @@ const genresRouter = require('./routes/genres');
 app.use("/", mainRouter);
 app.use("/movies", productsRouter);
 app.use("/genres", genresRouter);
+app.use((req, res) => {
+	res.status(404).render('404', {title: '404 - Not Found'});
+});
+
+app.use((err, req, res, next) => {
+    console.error("UNCAUGHT ERROR:", err.stack);
+    res.redirect('/');
+});
 
 app.listen(process.env.PORT || 3000, (err) => {
 	if (err)

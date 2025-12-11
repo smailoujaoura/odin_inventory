@@ -1,11 +1,13 @@
 <%- include('partials/header', { title: "Home" }) %>
 
-<h2>Welcome to the Movie App!</h2>
-<p>Explore your favorite movies and genres:</p>
+<div class="home-container">
+    <h2>Welcome to the Movie App!</h2>
+    <p>Manage your personal collection of movies.</p>
 
-<ul>
-    <li><a href="/movies">See all movies</a></li>
-    <li><a href="/genres">See all genres</a></li>
-</ul>
+    <div class="action-buttons">
+        <a href="/movies" class="btn btn-primary">See All Movies</a>
+        <a href="/movies/new" class="btn btn-success">Add New Movie</a>
+    </div>
+</div>
 
 <%- include('partials/footer') %>

@@ -1,0 +1,52 @@
+<%- include('partials/header', { title: movie.name }) %>
+
+<div class="movie-detail-container">
+    <div class="movie-poster">
+        <% if (movie.image) { %>
+            <img src="<%= movie.image %>" alt="<%= movie.name %> Poster">
+        <% } else { %>
+            <div class="placeholder-img">No Image</div>
+        <% } %>
+    </div>
+
+    <div class="movie-info">
+        <h1><%= movie.name %></h1> 
+        <p class="meta">Released: <%= movie.year %></p>
+
+        <div class="taxonomy">
+            <h3>Genres</h3>
+            <% if (locals.genres && genres.length > 0) { %>
+                <ul class="tag-list">
+                    <% genres.forEach(genre => { %>
+                        <li><%= genre.name %></li>
+                    <% }) %>
+                </ul>
+            <% } else { %>
+                <p>No genres listed.</p>
+            <% } %>
+        </div>
+
+        <div class="taxonomy">
+            <h3>Cast</h3>
+            <% if (locals.actors && actors.length > 0) { %>
+                <ul class="actor-list">
+                    <% actors.forEach(actor => { %>
+                        <li><%= actor.name %></li>
+                    <% }) %>
+                </ul>
+            <% } else { %>
+                <p>No actors listed.</p>
+            <% } %>
+        </div>
+
+        <div class="actions">
+            <button onclick="location.href='/movies/<%= movie.id %>/edit'">Edit</button>
+            
+            <form action="/movies/<%= movie.id %>/delete" method="POST" style="display:inline;">
+                <button type="submit" class="delete-btn">Delete</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') %>
